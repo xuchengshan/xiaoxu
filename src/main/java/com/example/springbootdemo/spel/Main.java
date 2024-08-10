@@ -20,6 +20,8 @@ public class Main {
         String hname = parser.parseExpression("#hname").getValue(context, String.class);
         String value = parser.parseExpression("getName()").getValue(context, String.class);
 
+        Object blank = parser.parseExpression("#blank").getValue(context);
+
         System.out.println("name:"+name);
         System.out.println("hname:"+hname);
         System.out.println("value:"+value);
