@@ -88,6 +88,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Hibernate Validator 是 Bean Validation 的一个实现 -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.5.Final</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
