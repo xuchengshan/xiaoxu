@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -57,6 +58,18 @@ public class AllExceptionHandler {
             msgList.add(allError.getDefaultMessage());
         }
         return HttpResult.of(msgList.toString());
+    }
+
+    /**
+     * @param e 异常类
+     * @return 响应
+     * @Validated @Valid 前端提交的方式为json格式有效
+     */
+    @ResponseBody
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public HttpResult MissingServletRequestParameterExceptionExceptionHandler(MissingServletRequestParameterException e) {
+        String message = "参数[" + e.getParameterName() + "]为必填！";
+        return HttpResult.of(message);
     }
 
 

@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+== 存储数据 ==
+browser -> saas:用户登录
+saas -> auth:用户认证，获取token
+auth --> saas:返回认证token
+saas --> browser:返回token
+browser -> saas:用户切换团队(浏览器携带token和团队信息)
+saas -> redis:缓存信息(key:team:online:token)
+== 使用数据 ==
+browser -> saas:用户相关点击操作
+saas -> redis:获取teamNo、personNo信息
+redis --> saas:return data
+@enduml

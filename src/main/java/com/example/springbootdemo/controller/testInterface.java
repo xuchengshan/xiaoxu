@@ -1,10 +1,7 @@
 package com.example.springbootdemo.controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -13,6 +10,10 @@ public interface testInterface {
 
     @PostMapping("/getById")
     String getById(@RequestBody @Valid Student student);
+
+
+    @GetMapping("/byId")
+    String getById(@RequestParam("name")String name);
 
 
 
