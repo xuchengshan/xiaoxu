@@ -1,0 +1,6 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: root
+    password: test
