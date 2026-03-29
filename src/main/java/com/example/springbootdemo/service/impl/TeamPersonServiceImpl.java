@@ -2,6 +2,7 @@ package com.example.springbootdemo.service.impl;
 
 
 import com.example.springbootdemo.entity.TeamPerson;
+import com.example.springbootdemo.mapper.TeamPersonMapper;
 import com.example.springbootdemo.service.TeamPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
